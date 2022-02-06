@@ -62,6 +62,9 @@ const ExpenseForm = (props) => {
     setEnterdTitle("");
     setEnterdAmount("");
     setEnterdDate("");
+
+    // hide form
+    props.onHideForm();
   };
 
   return (
