@@ -1,5 +1,5 @@
 // react
-import React from "react";
+import React, { useRef, useImperativeHandle } from "react";
 
 // styles
 import classes from "./Control.module.css";
@@ -8,7 +8,19 @@ import classes from "./Control.module.css";
 import Input from "./Input";
 import Label from "./Label";
 
-const Control = (props) => {
+const Control = React.forwardRef((props, ref) => {
+  const inputRef = useRef();
+
+  const activate = () => {
+    inputRef.current.focus();
+  };
+
+  useImperativeHandle(ref, () => {
+    return {
+      focus: activate,
+    };
+  });
+
   return (
     <div
       className={`${classes.control} ${
@@ -17,6 +29,7 @@ const Control = (props) => {
     >
       <Label htmlFor={props.id}>{props.label}</Label>
       <Input
+        ref={inputRef}
         type={props.type}
         id={props.id}
         value={props.value}
@@ -25,6 +38,6 @@ const Control = (props) => {
       />
     </div>
   );
-};
+});
 
 export default Control;
