@@ -1,5 +1,4 @@
-// styles
-import "./CourseGoalItem.css";
+import ListItem from "../../UI/List/ListItem/ListItem";
 
 const CourseGoalItem = (props) => {
   // const [deleteText, setDeleteText] = useState('');
@@ -9,11 +8,7 @@ const CourseGoalItem = (props) => {
     props.onDelete(props.id);
   };
 
-  return (
-    <li className="goal-item" onClick={deleteHandler}>
-      {props.children}
-    </li>
-  );
+  return <ListItem onClick={deleteHandler}>{props.children}</ListItem>;
 };
 
 export default CourseGoalItem;

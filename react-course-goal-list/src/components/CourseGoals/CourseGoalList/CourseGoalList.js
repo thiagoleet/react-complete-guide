@@ -1,12 +1,10 @@
-// styles
-import "./CourseGoalList.css";
-
 // components
 import CourseGoalItem from "../CourseGoalItem/CourseGoalItem";
+import List from "../../UI/List/List";
 
 const CourseGoalList = (props) => {
   return (
-    <ul className="goal-list">
+    <List>
       {props.items.map((goal) => (
         <CourseGoalItem
           key={goal.id}
@@ -16,7 +14,7 @@ const CourseGoalList = (props) => {
           {goal.text}
         </CourseGoalItem>
       ))}
-    </ul>
+    </List>
   );
 };
 
