@@ -1,0 +1,16 @@
+.control {
+  margin: 1rem 0;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.control label,
+.control input {
+  display: block;
+}
+
+.control.invalid input {
+  border-color: red;
+  background: #fbdada;
+}
