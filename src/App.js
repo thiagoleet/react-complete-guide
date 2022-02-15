@@ -11,6 +11,7 @@ import ExpensesApp from "./modules/expenses";
 import GoalListApp from "./modules/goal-list";
 import UsersApp from "./modules/users";
 import TypicalPageApp from "./modules/a-typical-page";
+import BehindTheScenesApp from "./modules/behind-the-scenes";
 
 const App = () => {
   const [chosenApp, setChosenApp] = useState(null);
@@ -31,6 +32,10 @@ const App = () => {
     {
       id: "A Typical Page",
       app: <TypicalPageApp />,
+    },
+    {
+      id: "Behind the Scenes",
+      app: <BehindTheScenesApp />,
     },
   ];
 

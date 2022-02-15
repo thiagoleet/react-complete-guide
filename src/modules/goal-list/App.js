@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 // styles
-import "./GoalListApp.css";
+import "./App.css";
 
 // components
 import CourseGoalList from "./components/CourseGoals/CourseGoalList/CourseGoalList";
 import CourseInput from "./components/CourseGoals/CourseInput/CourseInput";
 
-const GoalListApp = () => {
+const App = () => {
   const [courseGoals, setCourseGoals] = useState([
     { text: "Do all exercises!", id: "g1" },
     { text: "Finish the course!", id: "g2" },
@@ -48,4 +48,4 @@ const GoalListApp = () => {
   );
 };
 
-export default GoalListApp;
+export default App;

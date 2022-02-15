@@ -1,3 +1,3 @@
-import UsersApp from "./UsersApp";
+import UsersApp from "./App";
 
 export default UsersApp;

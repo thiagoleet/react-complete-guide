@@ -1,3 +1,3 @@
-import TypicalPageApp from "./TypicalPageApp";
+import TypicalPageApp from "./App";
 
 export default TypicalPageApp;
