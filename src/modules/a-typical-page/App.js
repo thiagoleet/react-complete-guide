@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 
 // styles
-import classes from "./TypicalPageApp.module.css";
+import classes from "./App.module.css";
 
 // components
 import Login from "./components/Login/Login";
@@ -12,7 +12,7 @@ import MainHeader from "./components/MainHeader/MainHeader";
 // context
 import AuthContext, { AuthContextProvider } from "./context/auth-context";
 
-const TypicalPageApp = () => {
+const App = () => {
   const ctx = useContext(AuthContext);
 
   return (
@@ -26,4 +26,4 @@ const TypicalPageApp = () => {
   );
 };
 
-export default TypicalPageApp;
+export default App;

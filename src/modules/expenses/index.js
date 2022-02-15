@@ -1,3 +1,3 @@
-import ExpensesApp from "./ExpensesApp";
+import ExpensesApp from "./App";
 
 export default ExpensesApp;

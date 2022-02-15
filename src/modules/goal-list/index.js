@@ -1,3 +1,3 @@
-import GoalListApp from "./GoalListApp";
+import GoalListApp from "./App";
 
 export default GoalListApp;

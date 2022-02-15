@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 // styles
-import "./ExpensesApp.css";
+import "./App.css";
 
 // components
 import Expenses from "./components/Expenses/Expenses";
@@ -11,7 +11,7 @@ import NewExpense from "./components/Expenses/NewExpense/NewExpense";
 // data
 import { DUMMY_EXPENSES } from "./data";
 
-const ExpensesApp = () => {
+const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
   const addExpenseHandler = (expense) => {
@@ -26,4 +26,4 @@ const ExpensesApp = () => {
   );
 };
 
-export default ExpensesApp;
+export default App;

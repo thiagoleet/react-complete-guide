@@ -2,13 +2,13 @@
 import { useState, Fragment } from "react";
 
 // styles
-import "./UsersApp.css";
+import "./App.css";
 
 // components
 import AddUser from "./components/Users/AddUser/AddUser";
 import UsersList from "./components/Users/UsersLists/UsersLists";
 
-const UsersApp = () => {
+const App = () => {
   const [usersList, setUsersList] = useState([]);
 
   const addUserHandler = (name, age) => {
@@ -24,4 +24,4 @@ const UsersApp = () => {
   );
 };
 
-export default UsersApp;
+export default App;
