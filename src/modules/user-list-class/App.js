@@ -1,0 +1,16 @@
+// styles
+
+import "./App.css";
+
+// components
+import Users from "./components/Users";
+
+function App() {
+  return (
+    <div>
+      <Users />
+    </div>
+  );
+}
+
+export default App;
