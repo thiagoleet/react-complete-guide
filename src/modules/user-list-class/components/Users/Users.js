@@ -5,7 +5,7 @@ import { Component } from "react";
 import classes from "./Users.module.css";
 
 // components
-import User from "./User";
+import User from "./User/User";
 
 class Users extends Component {
   constructor() {

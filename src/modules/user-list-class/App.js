@@ -5,7 +5,7 @@ import "./App.css";
 import { DUMMY_USERS } from "./data";
 
 // components
-import UserFinder from "./components/UserFinder";
+import UserFinder from "./components/Users/UserFinder/UserFinder";
 import UsersContext from "./store/users-context";
 
 function App() {

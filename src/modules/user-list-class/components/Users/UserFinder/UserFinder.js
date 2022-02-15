@@ -2,14 +2,14 @@
 import { Component, Fragment } from "react";
 
 // context
-import UsersContext from "../store/users-context";
+import UsersContext from "../../../store/users-context";
 
 // styles
 import classes from "./UserFinder.module.css";
 
 // components
-import Users from "./Users";
-import ErrorBoundary from "./ErrorBoundary";
+import Users from "../Users";
+import ErrorBoundary from "../../ErrorBoundary/ErrorBoundary";
 
 class UserFinder extends Component {
   static contextType = UsersContext;
