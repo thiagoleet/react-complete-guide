@@ -1,5 +1,5 @@
 // react
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 
 // styles
 import "./App.css";
@@ -9,15 +9,25 @@ import Button from "./components/UI/Button/Button";
 import DemoOutput from "./components/Demo/DemoOutput";
 
 const App = () => {
-  const [showParagraph, setShowParagraph] = useState(false);
+  console.log("App", "is running");
 
-  const toggleHandler = () => {
-    setShowParagraph((prevState) => !prevState);
+  const [showParagraph, setShowParagraph] = useState(false);
+  const [allowToggle, setAllowToggle] = useState(false);
+
+  const toggleHandler = useCallback(() => {
+    if (allowToggle) {
+      setShowParagraph((prevState) => !prevState);
+    }
+  }, [allowToggle]);
+
+  const allowToggleHandler = () => {
+    setAllowToggle(true);
   };
 
   return (
     <div className="app">
       <h1>Hi there!</h1>
+      <Button onClick={allowToggleHandler}>Allow toggling</Button>
       <Button onClick={toggleHandler}>Toggle Paragraph</Button>
       <DemoOutput show={showParagraph} />
     </div>
