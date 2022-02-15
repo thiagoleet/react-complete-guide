@@ -1,5 +1,5 @@
 // react
-import { Fragment, useState } from "react";
+import { lazy, Suspense, useState } from "react";
 
 // components
 import ListItem from "./components/ListItem";
@@ -7,11 +7,12 @@ import List from "./components/List";
 import Button from "./components/Button";
 
 // apps
-import ExpensesApp from "./modules/expenses";
-import GoalListApp from "./modules/goal-list";
-import UsersApp from "./modules/users";
-import TypicalPageApp from "./modules/a-typical-page";
-import BehindTheScenesApp from "./modules/behind-the-scenes";
+const ExpensesApp = lazy(() => import("./modules/expenses"));
+const GoalListApp = lazy(() => import("./modules/goal-list"));
+const UsersApp = lazy(() => import("./modules/users"));
+const TypicalPageApp = lazy(() => import("./modules/a-typical-page"));
+const BehindTheScenesApp = lazy(() => import("./modules/behind-the-scenes"));
+const UserListApp = lazy(() => import("./modules/user-list-class"));
 
 const App = () => {
   const [chosenApp, setChosenApp] = useState(null);
@@ -20,28 +21,40 @@ const App = () => {
     {
       id: "Expense",
       app: <ExpensesApp />,
+      description: "Basic of React components",
     },
     {
       id: "Goal List",
       app: <GoalListApp />,
+      description: "Using useState hook",
     },
     {
       id: "Users",
       app: <UsersApp />,
+      description: "Using loops",
     },
     {
       id: "A Typical Page",
       app: <TypicalPageApp />,
+      description: "Using useContext hook",
     },
     {
       id: "Behind the Scenes",
       app: <BehindTheScenesApp />,
+      description: "Undestanding what's going on behind the scenes in React",
+    },
+    {
+      id: "User List",
+      app: <UserListApp />,
+      description: "Class based components",
     },
   ];
 
   const choseAppHandler = (item) => {
     setChosenApp(item.app);
   };
+
+  const loadingFallback = <p>Loading...</p>;
 
   const appList = (
     <List>
@@ -50,6 +63,7 @@ const App = () => {
           <ListItem key={item.id}>
             <Button onClick={choseAppHandler.bind(null, item)}>
               {item.id}
+              <small style={{ display: "block" }}>({item.description})</small>
             </Button>
           </ListItem>
         );
@@ -57,6 +71,6 @@ const App = () => {
     </List>
   );
 
-  return <Fragment>{chosenApp || appList}</Fragment>;
+  return <Suspense fallback={loadingFallback}>{chosenApp || appList}</Suspense>;
 };
 export default App;
