@@ -27,8 +27,12 @@ const App = () => {
   return (
     <div className="app">
       <h1>Hi there!</h1>
-      <Button onClick={allowToggleHandler}>Allow toggling</Button>
-      <Button onClick={toggleHandler}>Toggle Paragraph</Button>
+      <p>
+        <Button onClick={allowToggleHandler}>Allow toggling</Button>
+      </p>
+      <p>
+        <Button onClick={toggleHandler}>Toggle Paragraph</Button>
+      </p>
       <DemoOutput show={showParagraph} />
     </div>
   );
