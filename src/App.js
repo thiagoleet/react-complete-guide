@@ -13,7 +13,7 @@ const UsersApp = lazy(() => import("./modules/users"));
 const TypicalPageApp = lazy(() => import("./modules/a-typical-page"));
 const BehindTheScenesApp = lazy(() => import("./modules/behind-the-scenes"));
 const UserListApp = lazy(() => import("./modules/user-list-class"));
-const StarWarsApp = lazy(() => import("./modules/starwars"));
+const MoviesApp = lazy(() => import("./modules/movies"));
 
 const App = () => {
   const [chosenApp, setChosenApp] = useState(null);
@@ -50,8 +50,8 @@ const App = () => {
       description: "Class based components",
     },
     {
-      id: "Star Wars",
-      app: <StarWarsApp />,
+      id: "Movies",
+      app: <MoviesApp />,
       description: "Using HTTP Requests",
     },
   ];

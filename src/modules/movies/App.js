@@ -1,44 +1,45 @@
 // react
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect, useCallback } from "react";
 
 // styles
 import "./App.css";
 
+// services
+import { addMovie, fetchMovies } from "./services";
+
 // components
-import { MoviesList } from "./components/Movies";
+import { MoviesList, AddMovie } from "./components/Movies";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchMoviesHandler = async () => {
+  const fetchMoviesHandler = useCallback(async () => {
     setIsLoading(true);
     setError(null);
 
     try {
-      const response = await fetch("https://swapi.dev/api/films");
-      if (!response.ok) {
-        throw new Error("Something went wrong");
-      }
-
-      const data = await response.json();
-      const transformedMovies = data.results.map((movieData) => {
-        return {
-          id: movieData.episode_id,
-          title: movieData.title,
-          openingText: movieData.opening_crawl,
-          releaseDate: movieData.release_date,
-        };
-      });
-
-      setMovies(transformedMovies);
+      const loadedMovies = await fetchMovies();
+      setMovies(loadedMovies);
     } catch (err) {
       setError(err.message);
+    } finally {
+      setIsLoading(false);
     }
+  }, []);
 
-    setIsLoading(false);
+  const addMovieHandler = async (movie) => {
+    try {
+      await addMovie(movie);
+    } catch (error) {
+      setError(error.message);
+    }
   };
+
+  useEffect(() => {
+    fetchMoviesHandler();
+  }, [fetchMoviesHandler]);
 
   let content = <p>Found no movies</p>;
   if (movies.length > 0) {
@@ -53,6 +54,9 @@ const App = () => {
 
   return (
     <Fragment>
+      <section>
+        <AddMovie onAddMovie={addMovieHandler} />
+      </section>
       <section>
         <button onClick={fetchMoviesHandler}>Fetch Movies</button>
       </section>
