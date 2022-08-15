@@ -14,6 +14,7 @@ const TypicalPageApp = lazy(() => import("./modules/a-typical-page"));
 const BehindTheScenesApp = lazy(() => import("./modules/behind-the-scenes"));
 const UserListApp = lazy(() => import("./modules/user-list-class"));
 const MoviesApp = lazy(() => import("./modules/movies"));
+const CardsApp = lazy(() => import("./modules/custom-hooks-card"))
 
 const App = () => {
   const [chosenApp, setChosenApp] = useState(null);
@@ -53,6 +54,11 @@ const App = () => {
       id: "Movies",
       app: <MoviesApp />,
       description: "Using HTTP Requests",
+    },
+    {
+      id: "Cards",
+      app: <CardsApp />,
+      description: "Using custom hooks",
     },
   ];
 
