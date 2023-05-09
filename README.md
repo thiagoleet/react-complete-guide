@@ -1,21 +1,51 @@
 # React: The Complete Guide
 
 ## Related repos
+
+### Components
 - [Basic of Components](https://github.com/thiagoleet/react-learning-basic-components)
 - [Using loops](https://github.com/thiagoleet/react-learning-loops)
 - [Behind the scenes](https://github.com/thiagoleet/react-learning-behind-the-scenes)
 - [Class Based Components](https://github.com/thiagoleet/react-learning-class-based-components)
-- Hooks
-    - [useState](https://github.com/thiagoleet/react-learning-hooks-usestate)
-    - [useContext](https://github.com/thiagoleet/react-learning-hooks-usecontext)
-    - [Custom Hooks (Basic)](https://github.com/thiagoleet/react-learning-custom-hooks-card)
-    - [Custom Hooks (Advanced)](https://github.com/thiagoleet/react-learning-custom-hooks-tasks)
+
+### Hooks
+- [useState](https://github.com/thiagoleet/react-learning-hooks-usestate)
+- [useContext](https://github.com/thiagoleet/react-learning-hooks-usecontext)
+- [Custom Hooks (Basic)](https://github.com/thiagoleet/react-learning-custom-hooks-card)
+- [Custom Hooks (Advanced)](https://github.com/thiagoleet/react-learning-custom-hooks-tasks)
+
+### Redux
+- [Basic](https://github.com/thiagoleet/react-redux-counter)
+- [Advanced](https://github.com/thiagoleet/react-redux-cart)
+
+### Forms & HTTP Requests
 - [Forms](https://github.com/thiagoleet/react-basic-form)
 - [HTTP Requests](https://github.com/thiagoleet/react-learning-http-requests)
+
+### Routes & Authentication
 - [Routes (Basic)](https://github.com/thiagoleet/react-learning-routes)
 - [Routes (Advanced)](https://github.com/thiagoleet/react-learning-routes-advanced)
 - [Authentication](https://github.com/thiagoleet/react-learning-authentication)
+
+### SPA Deploy
 - [Deploy](https://github.com/thiagoleet/react-learning-deploy) 
+
+### NextJS
+- TODO
+
+### Testing
+- TODO
+
+### Animations
+- TODO
+
+### Redux vs Hooks
+- TODO
+
+### Typescript
+- TODO
+
+
  
 ## Legacy repos
 - [React Burgershop](https://github.com/thiagoleet/react-burger-shop)
