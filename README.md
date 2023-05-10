@@ -31,7 +31,7 @@
 - [Deploy](https://github.com/thiagoleet/react-learning-deploy) 
 
 ### NextJS
-- TODO
+- [Framework introduction, with pre render pages and API calls](https://github.com/thiagoleet/nextjs-course)
 
 ### Testing
 - TODO
